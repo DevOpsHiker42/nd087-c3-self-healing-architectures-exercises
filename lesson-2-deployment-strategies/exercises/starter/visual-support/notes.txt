@@ -1,0 +1,10 @@
+Based on https://github.com/hjacobs/kube-ops-view/issues/141
+
+kubectl create serviceaccount ops-view
+
+kubectl create clusterrolebinding ops-view-binding --clusterrole=cluster-admin --serviceaccount udacity:ops-view
+
+# edit the deployment config to change service account as follows:
+...
+ serviceAccount: ops-view
+ serviceAccountName: ops-view
