@@ -1,0 +1,15 @@
+See: https://kubernetes.io/docs/tasks/access-application-cluster/list-all-running-container-images/
+
+Command output:
+
+kubectl get pods -o jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}' |\ 
+sort
+
+nginx-rolling-5987688f9d-85zhs:	nginx:1.21.1, 
+nginx-rolling-5987688f9d-9kd4q:	nginx:1.21.1, 
+nginx-rolling-5987688f9d-9lkkp:	nginx:1.21.1, 
+nginx-rolling-5987688f9d-c9lzh:	nginx:1.21.1, 
+nginx-rolling-5987688f9d-dkdgj:	nginx:1.21.1, 
+nginx-rolling-fc8498d7f-7qm7p:	nginx:1.20.1, 
+nginx-rolling-fc8498d7f-9fnpp:	nginx:1.20.1, 
+ops-view-85c4cf49b4-gh9bp:	hjacobs/kube-ops-view, 
