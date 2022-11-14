@@ -7,9 +7,9 @@ DEPLOY_INCREMENT=2
 # Functions
 #
 function canary_deploy {
-  V1_POD_REPLICAS=`kubectl get pods -n udacity | grep -c canary-v1`
+  V1_POD_REPLICAS=$(kubectl get pods -n udacity | grep -c canary-v1)
   echo "V1 pod replicas: " ${V1_POD_REPLICAS}
-  V2_POD_REPLICAS=`kubectl get pods -n udacity | grep -c canary-v2`
+  V2_POD_REPLICAS=$(kubectl get pods -n udacity | grep -c canary-v2)
   echo "V2 pod replicas: " ${V2_POD_REPLICAS}
   # Increment v2 replicas by DEPLOY_INCREMENT
   kubectl scale deployment canary-v2 --replicas=$((V2_POD_REPLICAS + DEPLOY_INCREMENT))
