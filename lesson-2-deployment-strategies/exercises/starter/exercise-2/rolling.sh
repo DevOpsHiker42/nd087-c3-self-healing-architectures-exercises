@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-kubectl set image deployment nginx-rolling nginx=nginx:1.21.1
+kubectl set image deployment nginx-rolling nginx=nginx:1.20.1
 # Monitor the deployment every second as it rolls out
 ATTEMPTS=0
 ROLLOUT_STATUS_CMD="kubectl rollout status deployment/nginx-rolling -n udacity"
