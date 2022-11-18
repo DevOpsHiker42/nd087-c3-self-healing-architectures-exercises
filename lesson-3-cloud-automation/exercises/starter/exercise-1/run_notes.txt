@@ -1,0 +1,2 @@
+No scaling seen using load test example provided, so increased load as follows:
+hey -n 10000 -c 10000 -z 1m http://localhost:30091
