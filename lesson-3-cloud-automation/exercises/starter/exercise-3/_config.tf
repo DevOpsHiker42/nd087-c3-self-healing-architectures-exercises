@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "udacity-tf-jaturnereast"
+    bucket = "udacity-tf-jaturnereast2"
     key    = "terraform/lesson3-ex-3.tfstate"
     region = "us-east-2"
   }
